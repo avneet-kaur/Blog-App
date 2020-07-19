@@ -1,0 +1,153 @@
+.techfont{
+  font-family: 'Special Elite', cursive;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.postdate{
+  text-align: center;
+}
+
+.posttitle{
+  font-family: 'Special Elite', cursive;
+  font-size: 3em;
+  text-align: center;
+}
+
+.postcontent{
+  font-family: 'Montserrat';
+  font-size: 2em;
+}
+
+.centerstage{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-comment{
+  position: absolute;
+  right: 0px;
+}
+
+.bigbrand{
+  font-size: 1.5em;
+}
+
+.container {
+  position: relative;
+}
+
+/*COLOR CHANGER*/
+/*Credit and Source: http://codepen.io/thapliyalshivam/pen/dvgXVO*/
+.loader{
+  filter:hue-rotate(0deg);
+  color: linear-gradient(45deg,#0f8,#08f);
+  animation:hue 5000ms infinite linear;
+}
+
+.previews{
+  @media (max-width: $mq-md)
+    display: flex
+    flex-direction: column
+  & > *
+    &:first-child
+      position: relative
+      height: 30em
+      background-color: $color-black
+      @media (min-width: $mq-md)
+        position: fixed
+        top: 0
+        left: 0
+
+        height: 100%
+        width: 100%
+      &:after
+        @extend %overlay
+
+    &:last-child
+      min-height: 100vh
+      @media (min-width: $mq-md)
+        margin-left: 45%
+}
+
+        /**
+         * Blog Post Preview
+         * On the Blog page
+         */
+.previews
+          &__container
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            height: 100%
+            width: 100%
+            padding: 2em
+
+            color: $color-white
+
+            span
+              @extend %letter-spacing
+              font-family: $font-body
+
+        .preview{
+          transition: background-color 0.2s ease-in-out
+
+          &:nth-child(even)
+            background-color: $color-white
+          &:hover
+            background-color: $color-alpha--light
+            .preview__more
+              box-shadow: inset 175px 0 0 0 $color-alpha
+              color: $color-white
+            }
+
+          &__img{
+            will-change: opacity
+            animation: fade-in 1s both
+          }
+
+
+        /**
+         * Absolute Background Cover
+         */
+        .absolute-bg
+          position: absolute
+          top: 0
+          left: 0
+          height: 100%
+          width: 100%
+          background-size: cover
+          background-repeat: no-repeat
+          background-position: 50%
+
+
+@keyframes spinify {
+  0% {
+    transform: translate(0px,0px);
+
+  }
+  33% {
+    transform: translate(0px,24px);
+    border-radius:100%;
+    width:10px;
+    height:10px;
+
+  }
+   66% {
+    transform:translate(0px,-16px);
+  }
+
+   88% {
+    transform:translate(0px,4px);
+
+  }
+  100% {
+    transform:translate(0px,0px);
+  }
+}
+@keyframes hue{
+  0%{filter: hue-rotate(0deg);}
+  100%{filter:hue-rotate(360deg);}
+
+}
